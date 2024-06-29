@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% block title %}<title>{{post.title }}</title>{% endblock %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+  {% block content %}
+<!-- Services banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-3">
+        <div class="container py-lg-5 mt-5">
+            <div class="banner-info-grid mt-5">
+                <h2 class="w3l-title-breadcrumb">Blog Posts</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span>Blog Posts</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //Services banner -->
+
+    <!-- Page content-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Post content-->
+
+                <div class="card mb-3">
+                  <a href="">
+                    <div class="btn btn-primary active bg-gradient rounded-pill mb-2">{{post.category}}
+                    </div>
+                    </a>
+                  <img src="{{post.image.url}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h3 class="fw-bolder mb-1">{{post.title}}</h3>
+                    <p class="card-text">{{post.body|safe}}</p>
+                    <p class="card-text"><small class="text-muted">Last updated {{post.updated_on|date:"M d, Y"}}</small></p>
+                    <a href="{% url 'profile' post.writer.profile_id %}">
+                      {% if post.writer.image %}
+                    <img src="{{ post.writer.image.url }}" width="50" height="50" class="rounded-circle" alt="...">
+                    {% else %}
+                    <img  src="{% static 'assets/images/default_profile_pic/default.jpg' %}" width="50" height="50" class="rounded-circle"  alt="...">
+                   {% endif %}
+                  </a>
+                    <p class="small text-muted">
+                      <a href="{% url 'profile' post.writer.profile_id %}">{{post.writer.first_name}} {{post.writer.last_name}}. See more...
+                      </a>
+                    </p>
+                    <p class="card-text">{{post.writer.profession|safe}}</p>
+                    <p class="small text-muted">Follow me on:
+                      {% if post.writer.website_url %}
+                       <a href="{{post.writer.website_url}}"> Website </a>|
+                      {% endif %}
+
+                      {% if post.writer.facebook_url %}
+                      <a href="{{post.writer.facebook_url}}">Facebook</a> | 
+                      {% endif %}
+
+                      {% if post.writer.twitter_url %}
+                      <a href="{{post.writer.twitter_url}}">Twitter</a> |
+                      {% endif %}
+
+                      {% if post.writer.instagram_url %}
+                      <a href="{{post.writer.instagram_url}}">Instagram</a> | 
+                      {% endif %}
+
+                      {% if post.writer.linkedin_url %}
+                      <a href="{{post.writer.linkedin_url}}">LinkedIn</a> |
+                      {% endif %}
+
+                      {% if post.writer.whatsapp_url %}
+                      <a href="{{post.writer.whatsapp_url}}"> Whatsapp</a> |
+                      {% endif %}
+
+                      {% if post.writer.upwork_url %}
+                      <a href="{{post.writer.upwork_url}}"> Upwork</a>
+                      {% endif %}
+                  </p>
+                  </div>
+                </div>
+                <!-- Comments section-->
+              <div class="col-lg-6 ml-2 text-dark">
+                  Comment{{ comments.count|pluralize }} <i class="fa-solid fa-comment"></i> ({{ comments.count }})
+                  View{{ posts.count|pluralize }} <i class="fa-regular fa-eye"></i> ({{ post.view_count }})
+                </div>
+                <br>
+                <section class="mb-5">
+                    {% if not comments %}
+                    <h6><strong>No comment yet, be the first to add comment</strong></h6>
+                    {% endif %}
+                    <div class="card bg-light mt-2">
+                        <div class="card-body">
+                          <h3><strong>Leave a Comment:</strong></h3><br>
+                            <!-- Comment form-->
+                            <form action="" method="POST" class="mb-4">
+                            {% csrf_token %}
+                           {{form|crispy}}
+                           {{form.media}}
+                           <button class="btn btn-primary" type="submit" formnovalidate="formnovalidate">Submit</button>
+                          </form>
+                            </form>
+                            <!-- Comment with nested comments-->
+                            {% for comment in comments %}
+                            <div class="d-flex mb-4">
+                                <!-- Parent comment-->
+                                <div class="flex-shrink-0"><img class="rounded-circle" src="{% static 'assets/images/default_profile_pic/default.jpg' %}" width="50" height="50" class="rounded-circle"  alt="user_image"></div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">{{comment.name}} {{comment.date_commented}}</div>
+                                   {{comment.body|safe}}
+                                   
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+              <h2 class="text-center">Recent Post</h2>
+              <div class="border rounded mb-6 mt-2">
+                <form action="{% url 'search' %}" method="POST">
+                    {% csrf_token %}
+                <div class="input-group">
+                    <input class="form-control form-control-sm border-0 pe-0" type="search" name="search" id="query" placeholder="Search Posts..." aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-sm my-2 my-sm-0 text-secondary icon-uxs" type="submit">
+                            <!-- Icon -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.80758 0C3.95121 0 0 3.95121 0 8.80758C0 13.6642 3.95121 17.6152 8.80758 17.6152C13.6642 17.6152 17.6152 13.6642 17.6152 8.80758C17.6152 3.95121 13.6642 0 8.80758 0ZM8.80758 15.9892C4.8477 15.9892 1.62602 12.7675 1.62602 8.80762C1.62602 4.84773 4.8477 1.62602 8.80758 1.62602C12.7675 1.62602 15.9891 4.8477 15.9891 8.80758C15.9891 12.7675 12.7675 15.9892 8.80758 15.9892Z" fill="currentColor"/>
+                                <path d="M19.762 18.6121L15.1007 13.9509C14.7831 13.6332 14.2687 13.6332 13.9511 13.9509C13.6335 14.2682 13.6335 14.7831 13.9511 15.1005L18.6124 19.7617C18.7712 19.9205 18.9791 19.9999 19.1872 19.9999C19.395 19.9999 19.6032 19.9205 19.762 19.7617C20.0796 19.4444 20.0796 18.9295 19.762 18.6121Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </div>
+              {% for post in posts %}
+              <div class="card mt-2" style="width: 18rem;">
+                <a href="{% url 'detail' post.slug %}">
+                <img src="{{post.image.url}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">{{post.title}}</h5>
+                  <p class="card-text">{{post.body|safe|truncatewords:20}}</p>
+                  <a href="{% url 'detail' post.slug %}" class="btn btn-primary">View details</a>
+                </div>
+              </div>
+              <br>
+              {% endfor %}
+            </div>
+              <!-- PAGINATION
+                ================================================== -->
+                <nav class="mt-5" aria-label="Page navigationa">
+                  <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                          {% if posts.has_previous %}
+                          <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                              <span aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% endif %}
+                      {% for i in posts.paginator.page_range %}
+                      {% if posts.number == i %}
+                      <li class="page-item "><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% else %}
+                      <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+                      <li class="page-item">
+                          {% if posts.has_next %}
+                          <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                              <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                          </a>
+                          {% endif %}
+                      </li>
+                  </ul>
+              </nav>
+        </div>
+    </div>
+<br>
+  {% endblock content %}

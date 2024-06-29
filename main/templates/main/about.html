@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% block title %}<title>About</title>{% endblock %}
+
+  {% block content %}
+
+  {% load static %}
+
+
+<!-- about banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+        <div class="container py-lg-5 mt-5">
+            <div class="banner-info-grid mt-5">
+                <h2 class="w3l-title-breadcrumb">About Me</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> About</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //about banner -->
+
+
+
+
+<!-- About Section -->
+<section class="w3l-content-6" id="skills">
+    <div class="content-6-mian py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="content-info-in row">
+                <div class="content-gd col-lg-5 pe-lg-5 my-image">
+                    <img src="{% static 'images/white.png' %}" alt="" class="img-fluid" />
+                </div>
+                <div class="content-gd col-lg-7 mt-lg-0 mt-5 align-self ps-lg-5">
+                    <h6 class="w3l-title-small mb-1">About Me</h6>
+                    <h3 class="w3l-title-main mb-lg-4 mb-3">A Few words about me</h3>
+                    <p class="my-4 pe-lg-5">Hello, I am Peter Charles Habakkuk, a Python Django developer with a passion for cybersecurity and ethical hacking. With years of experience in software development and cybersecurity, I specialize in building robust web applications with Django while also ensuring their security through ethical hacking practices.
+                        
+                        As a Python Django developer, I have a strong background in designing and implementing scalable web solutions using Django's powerful framework. I have expertise in developing backend logic, integrating front-end elements, and creating RESTful APIs to deliver seamless user experiences.
+                        
+                        In addition to my development skills, my proficiency in ethical hacking allows me to proactively identify and address security vulnerabilities within systems and applications. I have conducted penetration tests, vulnerability assessments, and security audits to enhance the resilience of organizations against cyber threats.
+                        
+                        I am committed to staying updated on the latest trends in Python development, Django best practices, and cybersecurity techniques to provide innovative solutions that prioritize both functionality and security. My goal is to leverage my dual expertise as a Python Django developer and ethical hacker to deliver secure, high-quality software solutions that meet the needs of modern digital environments.
+                        
+                        I am excited about the opportunity to collaborate on projects that combine my technical skills in Python Django development with my ethical hacking expertise to create secure and efficient solutions that drive business success and protect against cyber risks.
+                        
+                        Thank you for considering my profile. I look forward to discussing how my unique skill set can contribute to the success of your projects. Please feel free to reach out to me to learn more about my experience and contributions.
+                        </p>
+                    <h5 class="w3l-subtitle mb-md-5 mb-4">You can also find me in Upwork as a Freelancer. I Can give your business a new Creative start right away!</h5>
+
+                    <div class="progress-info mt-5">
+                        <h6 class="progress-tittle">HTML5/CSS3 and JavaScript <span
+                            class="float-right">  60%</span></h6>
+                    <div class="progress mb-4">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"
+                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <h6 class="progress-tittle">Python Django and Bootstrap5<span
+                    class="float-right">  80%</span></h6>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h6 class="progress-tittle">Cybersecurity ans Ethical Hacking <span
+              class="float-right">  70%</span></h6>
+      <div class="progress mb-4">
+          <div class="progress-bar" role="progressbar" style="width: 70%"
+              aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section -->
+
+
+
+
+<section class="w3l-join py-5" id="join">
+    <div class="container py-md-5 py-3">
+        <div class="row">
+            <div class="col-lg-7 video-info pe-lg-5">
+                <div class="title-content">
+                    <h6 class="w3l-title-small two">Get in touch</h6>
+                    <h3 class="w3l-title-main two mb-3">Let's start a Project! Hire Me.</h3>
+                    <p class="pe-lg-5">Are you in need of a professional and functional website that
+                        meets your business goals? I have got you covered! I offer 
+                        a wide range of experienced web apps development, from front-end to back-end 
+                        using most widely used back-end Python framework called DJANGO.
+                        I consistently bring the top tools directly builds web apps to those in need.
+                        My web development skills can create custom websites, web applications that are optimized for performance, security, and user experience.
+                        Whether you need a simple website or a complex web application, My web development skill have the expertise to deliver a solution that meets your needs. 
+                        Browse my Portfolios below to find the perfect fit for your project. Let me create a website that exceeds
+                        your expectations.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-5 history-info align-self">
+                <div class="w3banner-content-btns d-sm-flex justify-content-lg-end">
+                    <a href="{% url 'contact' %}" class="btn btn-style btn-primary mt-lg-5 mt-4 me-sm-3">Hire me </a>
+                    <a href="{% url 'contact' %}" class="btn btn-style transparent-btn mt-lg-5 mt-4 me-2">Contact Me </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!---
+<section class="w3l-clients" id="testimonials">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+            <span class="w3l-title-small">Reviews</span>
+            <h3 class="w3l-title-main">My clients and Testimonials</h3>
+                </div>
+            <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-5">
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet init consectetur et beatae elit. Velitae beatae
+                                    laudantium voluptate rem ullam dolore nisi voluptatibus est quasi, doloribus 
+                                    tempora. </q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="test-img"><img src="{% static 'assets/images/team1.jpg' %}" class="img-fluid"
+                                        alt="client-img">
+                                </div>
+                                <div class="peopl align-self">
+                                    <h3>William Noah</h3>
+                                    <p class="indentity">Photographer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet init consectetur et beatae elit. Velitae beatae
+                                    laudantium voluptate rem ullam dolore nisi voluptatibus est quasi, doloribus 
+                                    tempora. </q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="test-img"><img src="{% static 'assets/images/team2.jpg' %}" class="img-fluid"
+                                        alt="client-img">
+                                </div>
+                                <div class="peopl align-self">
+                                    <h3>Benjamin</h3>
+                                    <p class="indentity">Web designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet init consectetur et beatae elit. Velitae beatae
+                                    laudantium voluptate rem ullam dolore nisi voluptatibus est quasi, doloribus 
+                                    tempora. </q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="test-img"><img src="{% static 'assets/images/team3.jpg' %}" class="img-fluid"
+                                        alt="client-img">
+                                </div>
+                                <div class="peopl align-self">
+                                    <h3>Isabella Luna</h3>
+                                    <p class="indentity">Backend Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet init consectetur et beatae elit. Velitae beatae
+                                    laudantium voluptate rem ullam dolore nisi voluptatibus est quasi, doloribus 
+                                    tempora. </q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="test-img"><img src="{% static 'assets/images/team4.jpg' %}" class="img-fluid"
+                                        alt="client-img">
+                                </div>
+                                <div class="peopl align-self">
+                                    <h3>Elizabeth</h3>
+                                    <p class="indentity">Front-end developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-content">
+                        <div class="testimonial">
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet init consectetur et beatae elit. Velitae beatae
+                                    laudantium voluptate rem ullam dolore nisi voluptatibus est quasi, doloribus 
+                                    tempora. </q>
+                            </blockquote>
+                            <div class="testi-des">
+                                <div class="test-img"><img src="{% static 'assets/images/team2.jpg' %}" class="img-fluid"
+                                        alt="client-img">
+                                </div>
+                                <div class="peopl align-self">
+                                    <h3>Benjamin</h3>
+                                    <p class="indentity">Web designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+---->
+
+{% endblock content%}

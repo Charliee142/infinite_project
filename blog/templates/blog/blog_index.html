@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %}<title>Blog</title>{% endblock %}
+{% load static %}
+
+  {% block content %}
+<!-- Services banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-3">
+        <div class="container py-lg-5 mt-5">
+            <div class="banner-info-grid mt-5">
+                <h2 class="w3l-title-breadcrumb">Blog Posts</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span>Blog Posts</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //Services banner -->
+
+
+<div id="myCarousel" class="carousel slide pointer-event" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      
+  
+        <div class="container d-block w-100" style="width: 100px; height: 370px;">
+          <div class="carousel-caption text-start">
+            <h1>Welcome to the world of captivating stories .</h1>
+            <p>Are you ready to dive into a world of captivating stories, 
+              insightful reflections, and engaging content? Look no further,
+               as this blog is your gateway to a realm where words come alive 
+               and ideas flourish.</p>
+            {% if request.user.is_authenticated %}
+           
+            {% else %}
+            <p><a class="btn btn-lg btn-primary" href="{% url 'account_signup' %}">Sign up today</a></p>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="carousel-item mt-5">
+        <div class="container d-block w-100 mt-5" style="width: 100px; height: 370px;">
+          <div class="carousel-caption text-end">
+            <h1>One more for you.</h1>
+            <p>Join me on this journey as we explore a myriad of topics,
+               from the latest trends in technology to the timeless wisdom 
+               of literature, from the intricacies of art and culture to the 
+               joys and challenges of everyday life. Let's embark on a voyage
+                of discovery, learning, and inspiration together.</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'portfolio' %}">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for post in posts %}
+      <div class="col">
+        <div class="card h-100">
+          <a href="{% url 'detail' post.slug %}">
+          <img src="{{post.image.url}}" class="card-img-top" alt="...">
+          </a>
+          <div class="card-body">
+            <a href="{% url 'category' post.category %}">
+            <div class="btn btn-primary active bg-gradient rounded-pill mb-2">{{post.category}}
+            </div>
+            </a>
+            <a href="{% url 'detail' post.slug %}">
+            <h5 class="card-title">{{post.title}}</h5>
+          </a>
+            <p class="card-text">{{post.body|safe|truncatewords:20}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Posted on {{post.created_on|date:"M d, Y"}}</small>
+            <p class="text-muted">Author: {{post.writer.first_name}} {{post.writer.last_name}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+   <!-- PAGINATION
+                ================================================== -->
+                <nav class="mt-5" aria-label="Page navigationa">
+                  <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                          {% if posts.has_previous %}
+                          <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Previous">
+                              <span aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
+                          </a>
+                      </li>
+                      {% endif %}
+                      {% for i in posts.paginator.page_range %}
+                      {% if posts.number == i %}
+                      <li class="page-item "><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% else %}
+                      <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+                      <li class="page-item">
+                          {% if posts.has_next %}
+                          <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Next">
+                              <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                          </a>
+                          {% endif %}
+                      </li>
+                  </ul>
+              </nav>
+  </div>
+  <br><br>
+  {% endblock content %}

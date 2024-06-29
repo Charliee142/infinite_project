@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}<title>Contact</title>{% endblock %}
+
+  {% block content %}
+
+  {% load static %}
+
+<!-- contact banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+        <div class="container py-lg-5 mt-5">
+            <div class="banner-info-grid mt-5">
+                <h2 class="w3l-title-breadcrumb">Contact Us</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //contact banner -->
+
+
+
+<!-- contact -->
+<section class="w3l-contacts-12">
+    <div class="contact-top pt-5">
+        <div class="container py-lg-5 py-2">
+            <div class="text-center">
+                <h3 class="w3l-title-main">Get in touch with Me</h3>
+                <h3 class="title-big">Are you ready to <span>Get Ahead of Your Competitors?</span></h3>
+              <p class="mt-4">Are you in need of a professional and functional website that
+                meets your business goals? I have got you covered! I offer 
+                a wide range of experienced web apps development, from front-end to back-end 
+                using most widely used back-end Python framework called DJANGO.
+                I consistently bring the top tools directly builds web apps to those in need.
+                My web development skills can create custom websites, web applications that are optimized for performance, security, and user experience.
+                Whether you need a simple website or a complex web application, My web development skill have the expertise to deliver a solution that meets your needs. 
+                Browse my Portfolios below to find the perfect fit for your project. Let me create a website that exceeds
+                your expectations.</p>
+            </div>
+            <div class="d-grid cont-main-top">
+                <!-- contact form -->
+                <div class="contacts12-main mt-5">
+                    <form action="{% url 'contact' %}" method="POST" class="main-input">
+                        {% csrf_token %}
+                        <div class="top-inputs d-grid">
+                            <input type="text" placeholder="Full Name" name="name" id="name" required="">
+                            <input type="email" name="email" placeholder="Email" id="w3lSender" required="">
+                        </div>
+                        <input type="text" placeholder="Phone Number" name="phone" id="phone" required="">
+                      
+                        <textarea placeholder="Message" name="message" id="suject" required=""></textarea>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary btn-style">Submit Now</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- //contact form -->
+            </div>
+        </div>
+        <!-- map -->
+       <!--  <div class="map mt-5">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1569921526194!5m2!1sen!2sin"
+                frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>-->
+        <!-- //map -->
+    </div>
+</section>
+<!-- //contact -->
+
+
+{% endblock content %}

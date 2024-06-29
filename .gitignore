@@ -55,11 +55,6 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
 # Flask stuff:
 instance/
@@ -125,6 +120,7 @@ celerybeat.pid
 .env
 .venv
 env/
+myenv
 venv/
 ENV/
 env.bak/

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}<title>{{project.title }}</title>{% endblock %}
+
+  {% block content %}
+
+  {% load static %}
+
+<!-- Services banner -->
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+        <div class="container py-lg-5 mt-5">
+            <div class="banner-info-grid mt-5">
+                <h2 class="w3l-title-breadcrumb">My Latest Works</h2>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> My Latest Works</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- //Services banner -->
+
+<div class="container-sm mt-5">
+  <div class="card mb-3">
+    <img src="{{project.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{project.title}}</h3>
+      <p class="card-text">{{ project.description }}</p>
+      <h2 class="mt-5 text-center">Watch Project Video</h2>
+      <video width="300" height="500" controls>
+        <source src="{{project.video.url}}" type="video/mp4">
+      </video>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+  {% endblock content %}

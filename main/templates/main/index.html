@@ -1,0 +1,324 @@
+{% extends 'base.html' %}
+{% block title %}<title>Home</title>{% endblock %}
+
+  {% block content %}
+
+  {% load static %}
+
+
+    <!-- banner section -->
+    <section id="home" class="w3l-banner pt-5">
+        <div class="container pt-lg-5 pt-md-4">
+            <div class="row pt-lg-5 pt-4">
+                <div class="col-lg-7 banner-info-grid pt-lg-0 pt-5">
+                    <h1 class="mb-3">Hello, I'm Peter Charles Habakkuk</h1>
+                    <h3 class="mb-4"> <span class="typed-text"></span><span class="cursor">&nbsp</span> </h3>
+                    <p>With hands-on experience in <strong>software development</strong> using Django and a proven track
+                         record in <strong>ethical hacking</strong>, I bring a holistic understanding of the interplay between
+                          code functionality and cybersecurity. This unique blend of skills allows me to 
+                          design and implement secure web solutions from the ground up, incorporating
+                           security measures at every stage of the development process.</p>
+                    <br>
+                    <a class="btn btn-primary btn-style mt-5 me-2 py-2" href="{% url 'contact' %}"> Hire Me </a>
+                    <a class="btn btn-style transparent-btn mt-5 mb-2" href="{% url 'portfolio' %}"> My Portfolio </a>
+                    
+                </div>
+                <div class="col-lg-5 text-lg-end my-image mt-lg-0 mt-4">
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner section -->
+
+
+    <!-- About Section-->
+    <section class="w3l-about py-5" id="about">
+        <div class="container py-md-5 py-2">
+            <div class="row w3l-row">
+                <div class="col-lg-5 my-image pe-lg-5 mb-lg-0 mb-md-5 mb-4">
+                    <img src="{% static 'assets/images/white.png' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-7 w3l-about-info px-lg-4 align-center">
+                    <h6 class="w3l-title-small mb-1">My Biography</h6>
+                    <h3 class="w3l-title-main mb-2">A Professional Python Django Developer & Ethical Hacker based in Nigeria</h3>
+                    <p class="my-4 pe-lg-5"> I am a BSc holder from Lagos State University. I began my career as a junior developer 
+                        and within a few years I fell in love with Python. I have over 4 years of Web development experience. Currently I Work as a remote software developer and
+                         Ethical hacker for Companies!</p>
+                    <div class="my-info mt-4">
+                        <div class="single-info"><span>Name:</span>
+                            <p>Peter Charles Habakkuk</p>
+                        </div>
+                        <div class="single-info"><span>From:</span>
+                            <p>Abuja, Nigeria</p>
+                        </div>
+                        <div class="single-info"><span>Email:</span>
+                            <p><a href="mailto:charlespeter142@gmail.com">charlespeter142@gmail.com</a></p>
+                        </div>
+                        <div class="single-info"><span>Phone:</span>
+                            <p><a href="tel:+234 706 542 6535">+234 9136823282</a></p>
+                        </div>
+                    </div>
+                     <!--
+                    <ul class="follow-social mt-lg-5 mt-4">
+                        <li>
+                            <h5 class="me-md-3">Follow me on </h5>
+                        </li>
+                      
+                        <li><a href=""><span class="fab fa-whatsapp"></span></a>
+                        </li>
+                       
+                        <li><a href=""><span class="fab fa-linkedin-in"></span></a>
+                        </li>
+                        
+                       
+                        <li><a href=""><span class="fab fa-facebook-f"></span></a>
+                        </li>
+
+                        <li><a href=""><span class="fab fa-instagram"></span></a>
+                        </li>
+
+                        <li><a href=""><span class="fab fa-youtube"></span></a>
+                        </li>
+                        <li><a href=""><span class="fab fa-twitter"></span></a>
+                        </li>
+                        <li><a href=""><span class="fab fa-telegram"></span></a>
+                        </li>
+                        <li><a href=""><span class="fab fa-github"></span></a>
+                        </li>
+                        
+                        
+                    </ul>
+                 -->
+                    <div class="w3l-btn">
+                       
+                        <a href="{% url 'contact' %}" class="btn btn-style btn-secondary mt-lg-5 mt-4">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //About Section-->
+
+
+    <!-- Services Section -->
+    <section class="about-section py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+                <h3 class="w3l-title-main">My Services</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 my-2">
+                    <div class="about-single h-100">
+                        <div class="about-icon mb-4">
+                            <img src="{% static 'assets/images/frontend.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">Frontend Development</h5>
+                            <p>As a Frontend Developer, I am responsible for 
+                                creating the visual elements of a website or application 
+                                that users interact with. My role involves using a combination 
+                                of programming languages such as HTML, CSS, and JavaScript to
+                                 bring designs to life and ensure a seamless user experience. 
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 my-2">
+                    <div class="about-single h-100">
+                        <div class="about-icon mb-4">
+                            <img src="{% static 'assets/images/backend.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">Backend Development</h5>
+                            <p>As a Backend Developer, I am responsible for building 
+                                and maintaining the server-side logic and databases that 
+                                power websites, web applications, and software systems. My
+                                role involves working with server-side programming languages, 
+                                databases, and frameworks to ensure that data is securely processed, 
+                                stored, and retrieved.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 my-2">
+                    <div class="about-single h-100">
+                        <div class="about-icon mb-4">
+                            <img src="{% static 'assets/images/ethical1.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3">Ethical Hacking</h5>
+                            <p>I provide valuable cybersecurity services to organizations by
+                                 identifying and addressing security vulnerabilities in their 
+                                 systems and networks.I play a crucial role in helping organizations 
+                                 proactively identify and mitigate security risks, strengthen 
+                                 their cybersecurity defenses, and protect sensitive information 
+                                 from cyber threats or malicious hackers.</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- //Services Section -->
+
+
+      <!-- Skill-->
+    <section class="w3l-skills py-5" id="skills">
+        <div class="container py-lg-5 py-md-4 py-3">
+            <div class="row">
+                <div class="col-lg-6 pe-lg-5">
+                    <img src="{% static 'assets/images/about1.jpg' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5 w3l-content-6 px-lg-4 align-self-center">
+                    <h6 class="w3l-title-small mb-2">My skills</h6>
+                    <h3 class="w3l-title-main">My Featured skills</h3>
+                    <p class="mt-4">I Specialize in Python Django and SEO Strategy, and am passionate about creating Awesome
+                        Portfolio work. And I always ready to impress the audience with my Creativity. </p>
+                    <div class="progress-info mt-5">
+                        <h6 class="progress-tittle">HTML5/CSS3 and JavaScript <span
+                            class="float-right">  60%</span></h6>
+                    <div class="progress mb-4">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"
+                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  <h6 class="progress-tittle">Python Django and Bootstrap5<span
+                    class="float-right">  80%</span></h6>
+            <div class="progress mb-4">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h6 class="progress-tittle">Cybersecurity ans Ethical Hacking <span
+              class="float-right">  70%</span></h6>
+      <div class="progress mb-4">
+          <div class="progress-bar" role="progressbar" style="width: 70%"
+              aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      <!-- Skill-->
+
+
+    <!-- Stats Section-->
+    <section class="w3l-stats-section py-5" id="stats">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="w3l-stats-inner-inf py-lg-4">
+                <div class="row stats-con text-center">
+                    <div class="col-lg-3 col-6 stats_info counter_grid">
+                        <p class="counter"> 20 </p>
+                        <h3>Finished Projects</h3>
+                    </div>
+                    <div class="col-lg-3 col-6 stats_info counter_grid">
+                        <p class="counter"> 40 </p>
+                        <h3>Working Hours</h3>
+                    </div>
+                    <div class="col-lg-3 col-6 stats_info counter_grid mt-lg-0 mt-sm-5 mt-5">
+                        <p class="counter"> 12 </p>
+                        <h3>Online Support</h3>
+                    </div>
+                    <div class="col-lg-3 col-6 stats_info counter_grid mt-lg-0 mt-sm-5 mt-5">
+                        <p class="counter"> 40 </p>
+                        <h3>Happy Customers</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //Stats Section-->
+
+
+
+    <!-- portfolio -->
+    <section class="about-section py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+                <h3 class="w3l-title-main">Some Of My Latest Works</h3>
+            </div>
+            <div class="row justify-content-center">
+                {% for project in projects %} 
+                <div class="col-lg-4 col-md-6 my-2">
+                    <div class="about-single h-100">
+                        <div class="about-icon mb-4">
+                            <span class="image-block">
+                                <a class="image-zoom" href="{% url 'portfolio_detail' project.slug %}" data-gal="prettyPhoto[gallery]">
+                                    <div class="content-overlay"></div>
+                                    <img src="{{project.image.url}}" class="img-fluid w3layouts agileits" alt="portfolio-img">
+                                    
+                                </a>
+                            </span>
+                        </div>
+                        <div class="about-content">
+                            <h5 class="mb-3"><a href="">{{project.title}}</a></h5>
+                            <p>{{project.description|truncatewords:10|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="w3l-btn text-center">
+                <a href="{% url 'portfolio' %}" class="btn btn-border mt-lg-5 mt-4 me-2">
+                    More Works <span class="fas fa-long-arrow-alt-right"></span></a>
+            </div>
+        </div>
+    </section>
+    <!-- //portfolio -->
+
+   <!--Headlines-->
+   
+  <!--  <div class="container pt-5">
+    <div class="title-heading-w3 mx-auto text-center mb-sm-5 mb-4">
+        <h3 class="w3l-title-main mb-2">From Our Blog</h3>
+        <hr>
+    </div>
+    <div class="row">
+        {% if popular_post %}
+       <div class="col-lg-3 col-md-3 col-sm-12 pb-4">
+          <h5 class="text-success">Popular Posts</h5>
+          <hr>  
+         {% for i in popular_post %}
+          <a class="text-dark" href="">
+            <h3>{{i.title|truncatewords:4|safe}}</h3>
+            <p>{{i.body|truncatewords:4|safe}}</p>  
+          </a> 
+          <hr>   
+          {% endfor %}
+          {% else %}
+          {% endif %}
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 pb-4">
+            {% for i in recent_post %}
+          <a class="text-dark" href="{% url 'blog_detail' i.pk %}" style="text-decoration: none">
+            <img src="{{i.featured_image.url}}" class="card-img-top" alt="">            
+            <div class="card-body">
+              <h3 class="card-title">{{i.title|truncatewords:4|safe}}</h3>
+              <p class="card-text text-muted" style="font-size:12px"></p>
+              <p class="card-text">{{i.body|truncatewords:4|safe}}</p>
+              <button class="btn btn-primary btn-sm"><a href="{% url 'blog' %}" class="text-white">Read more</a></button>
+            </div> 
+          </a>
+        </div>
+        {% endfor %}
+        {% if trending %}
+        <div class="col-lg-2 col-md-2 col-sm-12 pb-4">
+          <h5 class="text-success">Trending Posts</h5>
+          <hr>
+         {% for i in trending %}
+            <a class="text-dark" href="{% url 'blog_detail' i.pk %}">
+              <img src="{{i.featured_image.url}}" class="card-img-top" alt="">  
+              <h6>{{i.title|truncatewords:4|safe}}</h6>
+              <p class="text-muted" style="font-size:12px">{{i.body|truncatewords:4|safe}}</p>  
+            </a> 
+            <hr> 
+            {% endfor %}
+            {% else %}
+            {% endif %}  
+        </div>
+    </div>
+</div>-->
+
+
+{% endblock content %}

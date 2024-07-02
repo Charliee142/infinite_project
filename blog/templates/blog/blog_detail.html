@@ -4,6 +4,24 @@
 {% load static %}
 
   {% block content %}
+  <style>
+    .img-user img{
+      width: 100px;
+      height: 100px;
+    }
+    img{
+      width: 480px;
+      height: 300px;
+    }
+    .flex-shrink-0 img{
+      width: 50px;
+      height: 50px;
+    }
+    .ms-3{
+      width: 400px;
+    }
+  </style>
+
 <!-- Services banner -->
 <section class="w3l-about-breadcrumb text-center">
     <div class="breadcrumb-bg breadcrumb-bg-about py-3">
@@ -35,14 +53,16 @@
                   <div class="card-body">
                     <h3 class="fw-bolder mb-1">{{post.title}}</h3>
                     <p class="card-text">{{post.body|safe}}</p>
-                    <p class="card-text"><small class="text-muted">Last updated {{post.updated_on|date:"M d, Y"}}</small></p>
+                    <p class="card-text"><small class="text-muted">Last updated {{post.updated_on|date}}</small></p>
+                    <div class="img-user">
                     <a href="{% url 'profile' post.writer.profile_id %}">
                       {% if post.writer.image %}
-                    <img src="{{ post.writer.image.url }}" width="50" height="50" class="rounded-circle" alt="...">
+                    <img src="{{ post.writer.image.url }}" class="rounded-circle" alt="...">
                     {% else %}
-                    <img  src="{% static 'assets/images/default_profile_pic/default.jpg' %}" width="50" height="50" class="rounded-circle"  alt="...">
+                    <img  src="{% static 'assets/images/default_profile_pic/default.jpg' %}" class="rounded-circle"  alt="...">
                    {% endif %}
                   </a>
+                </div>
                     <p class="small text-muted">
                       <a href="{% url 'profile' post.writer.profile_id %}">{{post.writer.first_name}} {{post.writer.last_name}}. See more...
                       </a>
@@ -82,7 +102,7 @@
                 <!-- Comments section-->
               <div class="col-lg-6 ml-2 text-dark">
                   Comment{{ comments.count|pluralize }} <i class="fa-solid fa-comment"></i> ({{ comments.count }})
-                  View{{ posts.count|pluralize }} <i class="fa-regular fa-eye"></i> ({{ post.view_count }})
+                  View{{ post.view_count|pluralize }} <i class="fa-regular fa-eye"></i> ({{ post.view_count }})
                 </div>
                 <br>
                 <section class="mb-5">
@@ -104,10 +124,10 @@
                             {% for comment in comments %}
                             <div class="d-flex mb-4">
                                 <!-- Parent comment-->
-                                <div class="flex-shrink-0"><img class="rounded-circle" src="{% static 'assets/images/default_profile_pic/default.jpg' %}" width="50" height="50" class="rounded-circle"  alt="user_image"></div>
+                                <div class="flex-shrink-0"><img class="rounded-circle" src="{% static 'assets/images/default_profile_pic/default.jpg' %}" class="rounded-circle"  alt="user_image"></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">{{comment.name}} {{comment.date_commented}}</div>
-                                   {{comment.body|safe}}
+                                    <p>{{comment.body|safe}}</p>
                                    
                                 </div>
                             </div>

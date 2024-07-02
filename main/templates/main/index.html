@@ -243,16 +243,15 @@
                     <div class="about-single h-100">
                         <div class="about-icon mb-4">
                             <span class="image-block">
-                                <a class="image-zoom" href="{% url 'portfolio_detail' project.slug %}" data-gal="prettyPhoto[gallery]">
+                                <a href="{% url 'portfolio_detail' project.slug %}">
                                     <div class="content-overlay"></div>
                                     <img src="{{project.image.url}}" class="img-fluid w3layouts agileits" alt="portfolio-img">
-                                    
                                 </a>
                             </span>
                         </div>
                         <div class="about-content">
-                            <h5 class="mb-3"><a href="">{{project.title}}</a></h5>
-                            <p>{{project.description|truncatewords:10|safe}}</p>
+                            <h5 class="mb-3"><a href="{% url 'portfolio_detail' project.slug %}">{{project.title}}</a></h5>
+                            <p>{{project.description|truncatewords:20|safe}}</p>
                         </div>
                     </div>
                 </div>

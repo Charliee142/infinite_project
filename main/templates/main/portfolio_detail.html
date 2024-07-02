@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 {% block title %}<title>{{project.title }}</title>{% endblock %}
 
+{% load static %}
+
   {% block content %}
-
-  {% load static %}
-
+  <style>
+    img{
+      width: 480px;
+      height: 300px;
+    }
+    video{
+      width: 670px;
+      height: 600px;
+    }
+  </style>
 <!-- Services banner -->
 <section class="w3l-about-breadcrumb text-center">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
@@ -27,15 +36,13 @@
     <div class="card-body">
       <h3 class="card-title">{{project.title}}</h3>
       <p class="card-text">{{ project.description }}</p>
-      <h2 class="mt-5 text-center">Watch Project Video</h2>
-      <video width="300" height="500" controls>
+      <div class="video">
+      <video controls>
         <source src="{{project.video.url}}" type="video/mp4">
       </video>
     </div>
+    </div>
   </div>
- 
 </div>
-
-
 
   {% endblock content %}

@@ -32,9 +32,11 @@
           <img src="{{post.image.url}}" class="card-img-top" alt="...">
           </a>
           <div class="card-body">
-            <a href="{% url 'category' post.category %}">
+            {% if post.category %}
+            <a href="">
             <div class="btn btn-primary active bg-gradient rounded-pill mb-2">{{post.category}}
             </div>
+            {% endif %}
             </a>
             <a href="{% url 'detail' post.slug %}">
             <h5 class="card-title">{{post.title}}</h5>

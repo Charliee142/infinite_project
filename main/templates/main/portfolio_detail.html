@@ -9,10 +9,6 @@
       width: 480px;
       height: 300px;
     }
-    video{
-      width: 670px;
-      height: 600px;
-    }
   </style>
 <!-- Services banner -->
 <section class="w3l-about-breadcrumb text-center">
@@ -36,11 +32,15 @@
     <div class="card-body">
       <h3 class="card-title">{{project.title}}</h3>
       <p class="card-text">{{ project.description }}</p>
-      <div class="video">
-      <video controls>
-        <source src="{{project.video.url}}" type="video/mp4">
-      </video>
-    </div>
+      <div class="row">
+        <h3 class="text-center">Watch Project video</h3>
+        <div class="col-md-3 ms-md-auto">
+          <video width="280px" height="400px"  controls>
+            <source src="{{project.video.url}}" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-md-3 ms-md-auto"></div>
+      </div>
     </div>
   </div>
 </div>

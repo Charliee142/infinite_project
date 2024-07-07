@@ -31,7 +31,7 @@
     <img src="{{project.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h3 class="card-title">{{project.title}}</h3>
-      <p class="card-text">{{ project.description }}</p>
+      <p class="card-text">{{ project.description|safe}}</p>
       <div class="row">
         <h3 class="text-center">Watch Project video</h3>
         <div class="col-md-3 ms-md-auto">

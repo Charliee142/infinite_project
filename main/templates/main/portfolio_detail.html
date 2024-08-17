@@ -4,12 +4,6 @@
 {% load static %}
 
   {% block content %}
-  <style>
-    img{
-      width: 480px;
-      height: 300px;
-    }
-  </style>
 <!-- Services banner -->
 <section class="w3l-about-breadcrumb text-center">
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
@@ -30,8 +24,10 @@
   <div class="card mb-3">
     <img src="{{project.image.url}}" class="card-img-top" alt="...">
     <div class="card-body">
+      <br>
       <h3 class="card-title">{{project.title}}</h3>
       <p class="card-text">{{ project.description|safe}}</p>
+      {% if project.video  %}  
       <div class="row">
         <h3 class="text-center">Watch Project video</h3>
         <div class="col-md-3 ms-md-auto">
@@ -41,6 +37,7 @@
         </div>
         <div class="col-md-3 ms-md-auto"></div>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>

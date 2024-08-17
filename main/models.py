@@ -5,7 +5,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = CKEditor5Field('Text', config_name='extends')
-    video = models.FileField(upload_to='video/project_videos', default=True, null=False)
+    video = models.FileField(upload_to='video/project_videos', null=True, blank=True)
     image = models.ImageField(upload_to='images/project_images')
     slug = models.SlugField(unique=True)
 

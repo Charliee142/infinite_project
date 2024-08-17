@@ -56,7 +56,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
-    view_count = models.PositiveIntegerField(default=0)
+    view_count = models.PositiveIntegerField(default=0, blank=True, null=True)
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):

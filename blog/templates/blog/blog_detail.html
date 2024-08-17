@@ -5,14 +5,7 @@
 
   {% block content %}
   <style>
-    .img-user img{
-      width: 100px;
-      height: 100px;
-    }
-    img{
-      width: 280px;
-      height: 300px;
-    }
+    
     .flex-shrink-0 img{
       width: 50px;
       height: 50px;
@@ -59,9 +52,9 @@
                     <div class="img-user">
                     <a href="{% url 'profile' post.writer.profile_id %}">
                       {% if post.writer.image %}
-                    <img src="{{ post.writer.image.url }}" class="rounded-circle" alt="...">
+                    <img src="{{ post.writer.image.url }}" class="rounded-circle" width="70" height="70" alt="...">
                     {% else %}
-                    <img  src="{% static 'assets/images/default_profile_pic/default.jpg' %}" class="rounded-circle"  alt="...">
+                    <img  src="{% static 'assets/images/default_profile_pic/default.jpg' %}" class="rounded-circle" width="70" height="70" alt="...">
                    {% endif %}
                   </a>
                 </div>

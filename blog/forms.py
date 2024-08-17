@@ -14,16 +14,18 @@ class UpdateProfileForm(ModelForm):
         model = UserProfile
         exclude = ['user']
         
+        
 class CreateProfileForm(ModelForm):
     class Meta:
         model = UserProfile
         exclude = ['user']
         
+        
 class CategoryForm(ModelForm):
     class Meta:
         model = Category
-        #exclude = ['slug']
-        fields = ['title', 'slug']
+        exclude = ['slug']
+        #fields = ['title', 'slug']
                
 
 class CommentForm(ModelForm):
